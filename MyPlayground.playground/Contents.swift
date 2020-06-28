@@ -1,5 +1,6 @@
 import UIKit
 
+//day1
 var str = "Hello, playground"
 
 str = "Goodbye"

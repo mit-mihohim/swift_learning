@@ -1,36 +1,32 @@
 import UIKit
 
-//day6 closures
-//function with no name and assign it to a variable => closure
-let driving = { 
-    print("I'm driving in my car")
-}
-driving()
+//day7 closures
 
-//closures with parameters
-let driving1 = { (place: String) in
-    print("I'm going to \(place) in my car")
-}
-driving1("London")
-
-let driving1WithReturn = { (place: String) -> String in
-    return "I'm going to \(place) in my car"
-}
-let message = driving1WithReturn("Portsmouth")
-print(message)
-
-//closure as parameters
-let driving2 = {
-    print("I'm driving in my car")
-}
-func travel(action: () -> Void) {
+func travel(action: (String) -> Void) {
     print("I'm getting ready to go.")
-    action()
+    action("Ponpi")
     print("I arrived!")
 }
-
-travel() {
-    print("I'm driving in trailing closure")
+travel {(place: String) in
+    print("I'm going to \(place) in my car")
 }
 
-//travel(action: driving2)
+//reminding
+var learnWithUnwrap = {
+    print("Hey, this is fun!")
+}
+func learnSwift(using approach: () -> Void) {
+    print("I'm learning Swift")
+    approach()
+}
+learnSwift(using: learnWithUnwrap)
+
+func tendGarden(activities: () -> Void) {
+    print("I love gardening")
+    activities()
+}
+tendGarden {
+    print("Let's grow some roses!")
+}
+
+

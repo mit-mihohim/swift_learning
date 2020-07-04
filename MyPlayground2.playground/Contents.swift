@@ -507,59 +507,94 @@ var number = 1
 //}
 //countMultiplesOf10(numbers: [5,10,15,20,25])
 
-func sayHello(to name: String) {
-    print("Hello, \(name)!")
-}
-sayHello(to: "Lucy")
-
-func isPassingGrade(for scores: [Int]) -> Bool {
-    var total = 0
-    for score in scores {
-        total += score
-    }
-    if total >= 500 {
-        return true
-    } else {
-        return false
-    }
-}
-isPassingGrade(for: [10, 11, 500])
-
-func sumItems(_ items: [Int]) -> Int {
-    var total = 0
-    for item in items {
-        total += item
-    }
-    return total
-}
-sumItems([10,11])
-
-func bounceOnTrampoline(times: Int) {
-    for _ in 1...times {
-        print("Boing!")
-    }
-}
-
-bounceOnTrampoline(times: 3)
-
-func calculateWadges(playBand: Int, isOvertime: Bool = false) -> Int {
-    var pay = 10_000 * playBand
-    if isOvertime {
-        pay *= 2
-    }
-    return pay
-}
-calculateWadges(playBand: 5, isOvertime: true)
-
-enum PlayError: Error {
-    case cheating
-    case noPlayers
-}
-func playGame(name: String, cheat: Bool = false) throws {
-    if cheat {
-        throw PlayError.cheating
-    } else {
-        print("Let's play a game of \(name)...")
-    }
-}
-try playGame(name: "Mario")
+//func sayHello(to name: String) {
+//    print("Hello, \(name)!")
+//}
+//sayHello(to: "Lucy")
+//
+//func isPassingGrade(for scores: [Int]) -> Bool {
+//    var total = 0
+//    for score in scores {
+//        total += score
+//    }
+//    if total >= 500 {
+//        return true
+//    } else {
+//        return false
+//    }
+//}
+//isPassingGrade(for: [10, 11, 500])
+//
+//func sumItems(_ items: [Int]) -> Int {
+//    var total = 0
+//    for item in items {
+//        total += item
+//    }
+//    return total
+//}
+//sumItems([10,11])
+//
+//func bounceOnTrampoline(times: Int) {
+//    for _ in 1...times {
+//        print("Boing!")
+//    }
+//}
+//
+//bounceOnTrampoline(times: 3)
+//
+//func calculateWadges(playBand: Int, isOvertime: Bool = false) -> Int {
+//    var pay = 10_000 * playBand
+//    if isOvertime {
+//        pay *= 2
+//    }
+//    return pay
+//}
+//calculateWadges(playBand: 5, isOvertime: true)
+//
+//enum PlayError: Error {
+//    case cheating
+//    case noPlayers
+//}
+//func playGame(name: String, cheat: Bool = false) throws {
+//    if cheat {
+//        throw PlayError.cheating
+//    } else {
+//        print("Let's play a game of \(name)...")
+//    }
+//}
+//try playGame(name: "Mario")
+//
+////day6 closures
+////function with no name and assign it to a variable => closure
+//let driving = {
+//    print("I'm driving in my car")
+//}
+//driving()
+//
+////closures with parameters
+//let driving1 = { (place: String) in
+//    print("I'm going to \(place) in my car")
+//}
+//driving1("London")
+//
+//let driving1WithReturn = { (place: String) -> String in
+//    return "I'm going to \(place) in my car"
+//}
+//let message = driving1WithReturn("Portsmouth")
+//print(message)
+//
+////closure as parameters
+//let driving2 = {
+//    print("I'm driving in my car")
+//}
+//func travel(action: () -> Void) {
+//    print("I'm getting ready to go.")
+//    action()
+//    print("I arrived!")
+//}
+//
+//travel() {
+//    print("I'm driving in trailing closure")
+//}
+//
+////travel(action: driving2)

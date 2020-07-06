@@ -1,80 +1,76 @@
 import UIKit
 
-//day10
- //class //final for disallow inheritation
-//final class Dog {
-//    var name: String
-//    var breed: String
+////day11(day10)
+////protocol
+//protocol Identifiable {
+//    var id: String { get set}
+//}
+//struct User: Identifiable {
+//    var id:String
+//}
+//func displayID(thing: Identifiable) {
+//    print("My ID is \(thing.id)")
+//}
 //
-//    init(name: String, breed: String) {
-//        self.name = name
-//        self.breed = breed
-//        print("\(name) is a \(breed)")
+////protocolをまとめる
+//protocol Payable {
+//    func calculateWedges() -> Int
+//}
+//protocol NeedsTraining {
+//    func study()
+//}
+//protocol HasVacation {
+//    func takeVacation(days: Int)
+//}
+//protocol Employee: Payable, NeedsTraining, HasVacation { }
+//
+////extensions
+//extension Int {
+//    func squared() -> Int {
+//        return self * self
 //    }
 //}
-//let poppy = Dog(name: "Poppy", breed: "Poodle")
- //classの継承
-//class Poodle: Dog {
-//    init(name: String) {
-//        super.init(name: name, breed: "Poodle")
+//let number = 8
+//number.squared()
+//
+//extension Int {
+//    var isEven: Bool {
+//        return self % 2 == 0
 //    }
 //}
-//let moffy = Poodle(name: "Moffy")
+//number.isEven
+//
+////protocol extensions
+//let pythons = ["Eric", "Martin", "John", "Josh"]
+//let beatles = Set(["John", "Paul", "George", "Ringo"])
+//extension Collection {
+//    func summarize() {
+//        print("There are \(count) of us:")
+//
+//        for name in self {
+//            print(name)
+//        }
+//    }
+//}
+//pythons.summarize()
+//beatles.summarize()
+//
+//let who = ["Doctor", "Bond", "StarTreck"]
+//who.summarize()
 
-
-//override
-//class Dog {
-//    func makeNoise() {
-//        print("Woof!")
-//    }
-//}
-//
-//class Poodle: Dog {
-//    override func makeNoise() {
-//        print("Poof!")
-//    }
-//}
-//let poppy = Poodle()
-//poppy.makeNoise()
-//class and struct
-//class Singer {
-//    var name = "Metalica"
-//}
-//var singer = Singer()
-//print(singer.name)
-//
-//var singerCopy = singer
-//singerCopy.name = "Lamb Of God"
-//print(singer.name)
-
-//deinitializer
-//class Person {
-//    var name = "Vin Diesel"
-//
-//    init() {
-//        print("\(name) is arrived!!")
-//    }
-//
-//    func printGreeting() {
-//        print("Fantastic to meet you, Mr.\(name)!!")
-//    }
-//    deinit {
-//        print("\(name) is gone!")
-//    }
-//}
-////var person = Person()
-////person.printGreeting()
-//
-//for _ in 1...3 {
-//    let person = Person()
-//    person.printGreeting()
-//}
-
-//mutability
-class Singer {
-    var name = "Korn"
+//protocol-oriented programming
+protocol Identifiable {
+    var id: String {get set}
+    func identify()
 }
+extension Identifiable {
+    func identify() {
+        print("My ID is \(id).")
+    }
+}
+struct User: Identifiable {
+    var id: String
+}
+let twostraws = User(id: "twostraws")
+twostraws.identify()
 
-let korn = Singer()
-korn.name = "Joenasan"
-print(korn.name)

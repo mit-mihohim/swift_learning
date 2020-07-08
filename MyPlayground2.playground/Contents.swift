@@ -894,3 +894,180 @@ var number = 1
 //let korn = Singer()
 //korn.name = "Joenasan"
 //print(korn.name)
+
+////day11(day10)
+////protocol
+//protocol Identifiable {
+//    var id: String { get set}
+//}
+//struct User: Identifiable {
+//    var id:String
+//}
+//func displayID(thing: Identifiable) {
+//    print("My ID is \(thing.id)")
+//}
+//
+////protocolをまとめる
+//protocol Payable {
+//    func calculateWedges() -> Int
+//}
+//protocol NeedsTraining {
+//    func study()
+//}
+//protocol HasVacation {
+//    func takeVacation(days: Int)
+//}
+//protocol Employee: Payable, NeedsTraining, HasVacation { }
+//
+////extensions
+//extension Int {
+//    func squared() -> Int {
+//        return self * self
+//    }
+//}
+//let number = 8
+//number.squared()
+//
+//extension Int {
+//    var isEven: Bool {
+//        return self % 2 == 0
+//    }
+//}
+//number.isEven
+//
+////protocol extensions
+//let pythons = ["Eric", "Martin", "John", "Josh"]
+//let beatles = Set(["John", "Paul", "George", "Ringo"])
+//extension Collection {
+//    func summarize() {
+//        print("There are \(count) of us:")
+//
+//        for name in self {
+//            print(name)
+//        }
+//    }
+//}
+//pythons.summarize()
+//beatles.summarize()
+//
+//let who = ["Doctor", "Bond", "StarTreck"]
+//who.summarize()
+
+//protocol-oriented programming
+//protocol Identifiable {
+//    var id: String {get set}
+//    func identify()
+//}
+//extension Identifiable {
+//    func identify() {
+//        print("My ID is \(id).")
+//    }
+//}
+//struct User: Identifiable {
+//    var id: String
+//}
+//let twostraws = User(id: "twostraws")
+//twostraws.identify()
+
+//day11(12)
+////var age: Int? = nil
+////age = 38
+////print(age)
+//
+////var name: String? = nil
+////name = "Tom"
+////if let unwrapped = name {
+////    print("\(unwrapped.count) letters")
+////} else {
+////    print("Missing name.")
+////}
+//
+////func greet(_ name: String?) {
+////    guard let unwrapped = name else {
+////        print("You did'nt provide a name!")
+////        return
+////    }
+////    print("Hello, \(unwrapped)!")
+////}
+////greet("Ben")
+////
+////let str = "5"
+////let num = Int(str)
+////
+////let age: Int! = nil
+//
+////func username(for id: Int) -> String? {
+////    if id == 1 {
+////        return "George Washighton"
+////    } else {
+////        return nil
+////    }
+////}
+////let user = username(for: 15) ?? "Anonymous"
+//
+////let names = ["George", "Lincoon", "Bush"]
+////let america = names.first?.uppercased()
+////
+////enum PasswordError: Error {
+////    case obvious
+////}
+////
+////func checkPassword(_ password: String) throws -> Bool {
+////    if password == "password" {
+////        throw PasswordError.obvious
+////    }
+////    return true
+////}
+////do {
+////    try checkPassword("password")
+////    print("That password is good!")
+////} catch {
+////    print("You can't use that password.")
+////}
+////if let result = try? checkPassword("password") {
+////    print("Result was \(result)")
+////} else {
+////    print("D'oh.")
+////}
+////
+////try! checkPassword("sekrit")
+////print("OK!")
+//
+//let str = "5"
+//let num = Int(str)
+//
+//struct Person {
+//    var id: String
+//
+//    init?(id: String) {
+//        if id.count == 9 {
+//            self.id = id
+//        } else {
+//            return nil
+//        }
+//    }
+//}
+//
+//class Animal {}
+//class  Fish: Animal {
+//    func makeSound() {
+//        print("BoubBoubls!")
+//    }
+//}
+//
+//class Dog: Animal {
+//    func makeNoise() {
+//        print("Woof!")
+//    }
+//}
+//
+//let pets = [Fish(), Dog(), Fish(), Dog()]
+//
+//for pet in pets {
+//    if let dog = pet as? Dog {
+//        dog.makeNoise()
+//    } else {
+//        print("Shhhh")
+//    }
+//}
+
